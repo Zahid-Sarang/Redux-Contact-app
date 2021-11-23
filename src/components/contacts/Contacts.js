@@ -19,6 +19,7 @@ const Contacts = () => {
         <th >Name</th>
         <th >Phone</th>
         <th >Email</th>
+        <th >Action</th>
     </tr>
   </thead>
   <tbody>
