@@ -1,5 +1,6 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
+import Contact from './Contact';
 
 const Contacts = () => {
     const contacts = useSelector(state => state.contacts)
@@ -22,19 +23,7 @@ const Contacts = () => {
   </thead>
   <tbody>
   {
-      contacts.map(contact =>(
-        <tr>
-      <td>
-      <div className="custom-control custom-checkbox">
-                <input type="checkbox" className="custom-control-input"/>
-                <label className="custom-control-label"></label>
-            </div>
-      </td>
-      <td>{contact.name}</td>
-      <td>{contact.phone}</td>
-      <td>{contact.email}</td>
-    </tr>
-      ))
+      contacts.map(contact =><Contact contact={contact}/>  )
   }
     
   </tbody>
