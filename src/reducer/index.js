@@ -3,6 +3,6 @@ import { contactReducer } from "./ContactReducer"
 
 
 export default combineReducers({
-    contacts:contactReducer,
+    contact:contactReducer,
 
 })
