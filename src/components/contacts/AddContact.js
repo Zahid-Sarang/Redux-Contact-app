@@ -1,13 +1,25 @@
-import React,{ useState } from 'react'
-
+import React,{ useState } from 'react';
+import { useDispatch } from 'react-redux';
+import { addContact } from '../../store';
+import shortid from "shortid"
+import {useNavigate } from "react-router-dom"
 const AddContact = () => {
+    let navigate =useNavigate()
+    const dispatch = useDispatch()
     const [name,setName] = useState("");
     const [email,setEmail] = useState("");
     const [phone,setPhone] = useState("");
 
     const createContact = (e) => {
         e.preventDefault();
-        console.log(name,phone,email);
+        const new_contact = {
+            id: shortid.generate(),
+            name: name,
+            phone: phone,
+            email: email,
+        };
+        dispatch(addContact(new_contact));
+        navigate("/");
     };
     return (
         <div className="card border-0 shadow">
