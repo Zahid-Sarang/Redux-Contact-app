@@ -6,8 +6,7 @@ import store from "./store"
 import { Provider } from 'react-redux';
 import { BrowserRouter as Router,Routes,Route,} from "react-router-dom";
 import AddContact from './components/contacts/AddContact';
-
-
+import EditContact from './components/contacts/EditContact';
 
 
 function App() {
@@ -19,8 +18,9 @@ function App() {
     <div className="conatiner">
       <div className="py-3">
         <Routes>
-        <Route path="/" element={<Contacts />} />
-        <Route path="/Contact/add" element={<AddContact />} />
+        <Route exact path="/" element={<Contacts />} />
+        <Route exact path="/Contact/add" element={<AddContact/>} />
+        <Route exact path="/contact/edit/:id" element={<EditContact/>} />
         </Routes>
       </div>
     </div>
